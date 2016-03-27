@@ -78,14 +78,14 @@ def list_submissions(request, page_id):
 
         writer = csv.writer(response)
 
-        header_row = ['Submission date'] + [label for name, label in data_fields]
+        header_row = ['Submission date'] + [label.encode('utf-8') for name, label in data_fields]
 
         writer.writerow(header_row)
         for s in submissions:
             data_row = [s.submit_time]
             form_data = s.get_data()
             for name, label in data_fields:
-                data_row.append(smart_str(form_data.get(name)))
+                data_row.append(smart_str(form_data.get(name)).decode('utf-8'))
             writer.writerow(data_row)
         return response
 
