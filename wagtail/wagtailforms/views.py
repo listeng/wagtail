@@ -85,7 +85,7 @@ def list_submissions(request, page_id):
             data_row = [s.submit_time]
             form_data = s.get_data()
             for name, label in data_fields:
-                data_row.append(smart_str(form_data.get(name)).decode('utf-8'))
+                data_row.append(smart_str(','.join(form_data.get(name))))
             writer.writerow(data_row)
         return response
 
@@ -95,7 +95,7 @@ def list_submissions(request, page_id):
     data_rows = []
     for s in submissions:
         form_data = s.get_data()
-        data_row = [s.submit_time] + [form_data.get(name) for name, label in data_fields]
+        data_row = [s.submit_time] + [','.join(form_data.get(name)) for name, label in data_fields]
         data_rows.append({
             "model_id": s.id,
             "fields": data_row
