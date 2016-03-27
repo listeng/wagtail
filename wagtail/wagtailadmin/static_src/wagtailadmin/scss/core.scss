@@ -119,16 +119,16 @@ body {
 
 footer {
     // @include transition(all 0.2s ease);
-    @include transition(bottom 0.5s ease 1s);
+    //@include transition(bottom 0.5s ease 1s);
     @include row();
-    border-radius: 3px 3px 0 0;
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+    //border-radius: 3px 3px 0 0;
+    //box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
     background: $color-grey-1;
     position: fixed;
     bottom: 0;
     padding: 0.5em;
-    width: 90%;
-    margin: 0 5%;
+    //width: 90%;
+    margin: 0;
     color: $color-white;
 
     ul {
@@ -140,12 +140,12 @@ footer {
     }
 
     .actions {
-        width: 250px;
+        width: 150px;
         margin-right: $grid-gutter-width/2;
     }
 
     .meta {
-        float: right;
+        float: left;
         text-align: right;
         padding: 7px $grid-gutter-width/2;
         font-size: 0.85em;
@@ -419,8 +419,8 @@ footer,
     }
 
     footer {
-        width: 80%;
-        margin-left: 50px;
+        width: 100%;
+        //margin-left: 50px;
     }
 
     .content {
@@ -444,8 +444,8 @@ footer,
     }
 
     footer {
-        width: 80%;
-        margin-left: 50px;
+        width: 100%;
+        //margin-left: 50px;
     }
 
 
@@ -478,11 +478,11 @@ footer,
 
 @media screen and (min-width: 90em) {
     .wrapper {
-        max-width: $breakpoint-desktop-larger;
+        //max-width: $breakpoint-desktop-larger;
     }
 
     footer {
-        width: 90em;
+        width: 100%;
     }
 }
 
